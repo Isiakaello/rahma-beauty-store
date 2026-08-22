@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+< lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahma Beauty Store</title>
+
+    <style>
+        
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #ffffff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: #ffffff;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        header h2 {
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        #home {
+            min-height: 80vh;
+            padding: 80px 7%;
+            background: #f8efec;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #home h1 {
+            font-size: 48px;
+            max-width: 600px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        #home p {
+            font-size: 18px;
+            max-width: 550px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        button {
+            width: 130px;
+            padding: 13px 20px;
+            border: none;
+            background: #222;
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            #home h1 {
+                font-size: 38px;
+            }
+      
+/* ================= SMOOTH ANIMATIONS & INTERACTION EFFECTS ================= */
+
+/* Smooth Page Scrolling */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Hover Effects on Navigation & Links */
+nav a, footer a {
+  transition: all 0.3s ease !important;
+  display: inline-block;
+}
+
+nav a:hover, footer a:hover {
+  color: #d4af37 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Hover & Push Effects on All Buttons */
+button, 
+a[href*="wa.me"],
+a[href*="tel:"] {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  cursor: pointer;
+}
+
+button:hover, 
+a[href*="wa.me"]:hover,
+a[href*="tel:"]:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+  filter: brightness(1.05);
+}
+
+button:active, 
+a[href*="wa.me"]:active {
+  transform: translateY(-1px) scale(0.98) !important;
+}
+
+/* Lift Effect on Cards & Container Boxes */
+section div {
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+/* Card Hover Elevation */
+#products div:hover,
+#why-us div:hover,
+#contact div:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Image Hover Zoom Effect */
+img {
+  transition: transform 0.4s ease !important;
+}
+
+div:hover > img,
+a:hover > img {
+  transform: scale(1.05) !important;
+}
+
+/* Contact Form Input Field Focus Glow */
+input, textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+input:focus, textarea:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4) !important;
+  outline: none !important;
+}
+/* Gentle Image Zoom Effect */
+.rahma-hero-image-wrapper,
+div[style*="flex"] img {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+img {
+  transition: transform 0.5s ease;
+}
+
+div:hover > img {
+  transform: scale(1.04);
+}
+
+/* Input Focus Glow Effects */
+input, textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
+}
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= START HEADER SECTION ================= -->
+<header style="background-color: #ffffff; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; padding: 15px 7%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+    
+    <!-- Brand Logo Wrapper -->
+    <a href="#home" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+      <!-- Elegant Emblem Graphic -->
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #d4af37; border-radius: 50%; color: #d4af37; font-size: 11px; font-weight: 300;">✦</span>
+      
+      <!-- Brand Text -->
+      <div style="display: flex; flex-direction: column;">
+        <span style="font-family: 'Playfair Display', 'Didot', 'Georgia', serif; font-size: 1.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: 2px; text-transform: uppercase; line-height: 1.1;">
+          RAHMA
+        </span>
+        <span style="font-family: 'Montserrat', 'Helvetica Neue', sans-serif; font-size: 0.55rem; font-weight: 500; color: #d4af37; letter-spacing: 3.5px; text-transform: uppercase; margin-top: 2px;">
+          BEAUTY STORE
+        </span>
+      </div>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav style="display: flex; gap: 24px; align-items: center;">
+      <a href="#home" style="color: #333333; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s ease;">Home</a>
+      <a href="#about" style="color: #333333; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s ease;">About</a>
+      <a href="#products" style="color: #333333; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s ease;">Products</a>
+      <a href="#contact" style="color: #333333; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s ease;">Contact</a>
+    </nav>
+
+  </div>
+</header>
+<!-- ================= END HEADER SECTION ================= -->
+
+
+
+        <!-- Start of Home / Hero Section -->
+<style>
+  .rahma-hero-section {
+    background-color: #faf7f5;
+    padding: 60px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #222222;
+  }
+
+  .rahma-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .rahma-hero-content {
+    flex: 1;
+    text-align: center;
+  }
+
+  .rahma-hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+  }
+
+  .rahma-hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 30px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rahma-hero-btn {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .rahma-hero-btn:hover {
+    background-color: #333333;
+  }
+
+  .rahma-hero-image-wrapper {
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  }
+
+  .rahma-hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    .rahma-hero-container {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .rahma-hero-content {
+      text-align: left;
+    }
+
+    .rahma-hero-title {
+      font-size: 3.2rem;
+    }
+
+    .rahma-hero-description {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>
+
+<section id="home" class="rahma-hero-section">
+  <div class="rahma-hero-container">
+    <div class="rahma-hero-content">
+      <h1 class="rahma-hero-title">Beauty that feels confidently yours.</h1>
+      <p class="rahma-hero-description">
+        Discover quality beauty and personal care products curated specifically for your everyday routine.
+      </p>
+      <a href="#products" class="rahma-hero-btn">Shop Now</a>
+    </div>
+
+    <div class="rahma-hero-image-wrapper">
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600" alt="Beauty Products" style="width: 100%; max-width: 500px; border-radius: 12px; display: block; margin: 0 auto;">
+    </div>
+  </div>
+</section>
+
+<section id="about" style="padding: 70px 7%;">
+  <h2 style="margin-bottom: 20px;">About Rahma Beauty Store</h2>
+  <p style="color: #666; font-size: 17px;">
+    Rahma Beauty Store is a modern beauty and personal care brand...
+  </p>
+</section>
+
+<section id="products" style="padding: 70px 7%;">
+  <div style="display: flex; gap: 25px; flex-wrap: wrap;">
+    <!-- Card 1 -->
+    <div style="background: white; padding: 30px; width: 280px;">
+      <h3>Quality Products</h3>
+      <p style="color: #666; margin-top: 10px;">
+        Curated beauty products selected for your everyday routine.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background: white; padding: 30px; width: 280px;">
+      <h3>Personal Care</h3>
+      <p style="color: #666; margin-top: 10px;">
+        Personal-care essentials for a fresh and confident look.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="background: white; padding: 30px; width: 280px;">
+      <h3>Gift Collection</h3>
+      <p style="color: #666; margin-top: 10px;">
+        Beautiful selections for special occasions and daily treats.
+      </p>
+    </div>
+
+  </div>
+</>
+
+</>
+  <!-- Rahma Beauty Store - Products Section -->
+<style>
+  /* Section Styles */
+  .rahma-products-section {
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 60px 20px;
+    color: #222222;
+  }
+
+  .rahma-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .rahma-section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+  }
+
+  .rahma-section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #777777;
+    margin-bottom: 45px;
+  }
+
+  /* Grid Layout */
+  .rahma-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  /* Product Card */
+  .rahma-product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rahma-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Image Container */
+  .rahma-image-wrapper {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background-color: #fcf9f8;
+  }
+
+  .rahma-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .rahma-product-card:hover .rahma-image-wrapper img {
+    transform: scale(1.04);
+  }
+
+  /* Content Block */
+  .rahma-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .rahma-card-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #c59b27;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .rahma-card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: #1a1a1a;
+  }
+
+  .rahma-card-description {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  /* Button */
+  .rahma-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .rahma-btn:hover {
+    background-color: #333333;
+  }
+</style>
+    <!-- Card 1: Quality Beauty Products -->
+<div class="rahma-product-card">
+  <div class="rahma-image-wrapper">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600" alt="Quality Beauty Products" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  </div>
+  <div class="rahma-card-content">
+    <span class="rahma-card-category">SKINCARE & COSMETICS</span>
+    <h3 class="rahma-card-title">Quality Beauty Products</h3>
+    <p class="rahma-card-description">Curated, high-grade beauty formulas and cosmetics selected to nourish and enhance your natural glow.</p>
+    <a href="#" class="rahma-btn">View Products</a>
+  </div>
+</div>
+    <div class="rahma-product-card">
+      <div class="rahma-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600" alt="Quality Beauty Products" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div class="rahma-card-content">
+        <span class="rahma-card-category">SKINCARE & COSMETICS</span>
+        <h3 class="rahma-card-title">Quality Beauty Products</h3>
+        <p class="rahma-card-description">Curated, high-grade beauty formulas and cosmetics selected to nourish and enhance your natural glow.</p>
+        <a href="#" class="rahma-btn">View Products</a>
+      </div>
+    </div>
+      <div class="rahma-product-card">
+        <div class="rahma-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600" alt="Personal Care Products" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="rahma-card-content">
+          <span class="rahma-card-category">Body & Hygiene</span>
+          <h3 class="rahma-card-title">Personal Care</h3>
+          <p class="rahma-card-description">Artisanal body soaps, rich moisturizers, and everyday essentials crafted for complete self-care routines.</p>
+          <a href="#" class="rahma-btn">View Products</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Gift Collection -->
+      <div class="rahma-product-card">
+        <div class="rahma-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80" alt="Gift Collection">
+        </div>
+        <div class="rahma-card-content">
+          <span class="rahma-card-category">Curated Sets</span>
+          <h3 class="rahma-card-title">Gift Collection</h3>
+          <p class="rahma-card-description">Elegantly packaged sets featuring our finest beauty and personal care items, perfect for special occasions.</p>
+          <a href="#" class="rahma-btn">View Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</>
+<!-- Contact Us Section -->
+< id="contact" style="padding: 60px 20px; background-color: #faf6f0; text-align: center; border-radius: 16px; margin: 40px auto; max-width: 1200px;">
+  <h2 style="font-size: 2rem; color: #1a1a1a; margin-bottom: 12px;">Get in Touch</h2>
+  <p style="color: #666; font-size: 1.05rem; max-width: 600px; margin: 0 auto 24px; line-height: 1.6;">
+    Have a question or want to place an order? We’d love to hear from you.
+  </p>
+  <div style="margin-bottom: 24px;">
+    <p style="font-size: 1.1rem; color: #333; font-weight: 600; margin: 0;">
+      📞 Phone / WhatsApp: <a href="tel:+2348069111975" style="color: #1a1a1a; text-decoration: none;">+234 806 911 1975</a>
+    </p>
+  </div>
+  <a href="https://wa.me/2348069111975" target="_blank" style="display: inline-block; background-color: #25D366; color: #ffffff; padding: 14px 28px; border-radius: 30px; font-weight: bold; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+    💬 Chat on WhatsApp
+  </a>
+
+
+  <h2 <!-- ================= START CONTACT SECTION ================= -->
+<section id="contact" style="padding: 60px 7%; background-color: #faf6f0; margin-top: 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Section Heading -->
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h2 style="font-size: 2rem; color: #1a1a1a; margin-bottom: 10px;">Get in Touch</h2>
+      <p style="color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+        Have questions about our skincare and beauty products or need assistance placing an order? Contact Rahma Beauty Store today—we’re here to help!
+      </p>
+    </div>
+
+    <!-- Contact Grid Wrapper -->
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; align-items: flex-start;">
+      
+      <!-- Left Column: Business Info -->
+      <div style="flex: 1; min-width: 280px; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 20px;">Contact Details</h3>
+        
+        <div style="margin-bottom: 20px;">
+          <p style="font-size: 0.85rem; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Phone & WhatsApp</p>
+          <a href="https://wa.me/2348069111975" target="_blank" style="font-size: 1rem; color: #1a1a1a; text-decoration: none; font-weight: 600;">
+            📞 +234 806 911 1975
+          </a>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <p style="font-size: 0.85rem; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Email Support</p>
+          <a href="mailto:support@rahmabeautystore.com" style="font-size: 1rem; color: #1a1a1a; text-decoration: none; font-weight: 600;">
+            ✉️ support@rahmabeautystore.com
+          </a>
+        </div>
+
+        <div style="margin-bottom: 30px;">
+          <p style="font-size: 0.85rem; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Store Location</p>
+          <p style="font-size: 1rem; color: #1a1a1a; margin: 0; font-weight: 600;">
+            📍 Lagos, Nigeria
+          </p>
+        </div>
+
+        <a href="https://wa.me/2348069111975" target="_blank" style="display: block; text-align: center; background-color: #25D366; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.25);">
+          💬 Instant WhatsApp Chat
+        </a>
+      </div>
+
+      <!-- Right Column: Customer Form -->
+      <div style="flex: 1.2; min-width: 280px; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 20px;">Send Us a Message</h3>
+        
+        <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 0.9rem; color: #444; margin-bottom: 6px; font-weight: 600;">Your Name</label>
+            <input type="text" required placeholder="Enter your name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; outline: none;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 0.9rem; color: #444; margin-bottom: 6px; font-weight: 600;">Email Address</label>
+            <input type="email" required placeholder="Enter your email" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; outline: none;">
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; font-size: 0.9rem; color: #444; margin-bottom: 6px; font-weight: 600;">Message</label>
+            <textarea rows="4" required placeholder="How can we help you?" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; outline: none; resize: vertical;"></textarea>
+          </div>
+
+          <button type="submit" style="width: 100%; background-color: #1a1a1a; color: #ffffff; border: none; padding: 14px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= END CONTACT SECTION ================= -->
+
+<!-- Footer Section -->
+<footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 20px 20px; text-align: center; margin-top: 60px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h3 style="font-size: 1.5rem; margin-bottom: 8px; color: #ffffff; font-weight: 600;">Rahma Beauty Store</h3>
+    <p style="color: #b3b3b3; font-size: 0.95rem; margin-bottom: 16px; font-style: italic;">Beauty, Care & Confidence</p>
+    <p style="color: #cccccc; font-size: 0.9rem; margin-bottom: 24px;">
+      📞 WhatsApp / Phone: <a href="https://wa.me/2348069111975" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">+234 806 911 1975</a>
+    </p>
+    <hr style="border: none; border-top: 1px solid #333333; margin: 20px auto; max-width: 800px;">
+    <p style="color: #888888; font-size: 0.85rem; margin: 0;">
+      © 2026 Rahma Beauty Store. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
+="font-size: 2rem; color: #1a1a1a; margin-bottom: 12px;">Get in Touch</h2>
+  <p style="color: #666; font-size: 1.05rem; max-width: 600px; margin: 0 auto 24px; line-height: 1.6;">
+    Have a question or want to place an order? We’d love to hear from you.
+  </p>
+  <div style="margin-bottom: 24px;">
+    <p style="font-size: 1.1rem; color: #333; font-weight: 600; margin: 0;">
+      📞 Phone / WhatsApp: <a href="tel:+2348069111975" style="color: #1a1a1a; text-decoration: none;">+234 806 911 1975</a>
+    </p>
+  </div>
+  <a href="https://wa.me/2348069111975" target="_blank" style="display: inline-block; background-color: #25D366; color: #ffffff; padding: 14px 28px; border-radius: 30px; font-weight: bold; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+    💬 Chat on WhatsApp
+  </a>
+</section>
+
+<!-- ================= START FOOTER SECTION ================= -->
+<footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 7% 25px; margin-top: 60px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; align-items: flex-start;">
+    
+    <!-- Brand Info Column -->
+    <div style="flex: 1.5; min-width: 250px;">
+      <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 12px; font-weight: 700; letter-spacing: 1px;">RAHMA BEAUTY STORE</h3>
+      <p style="color: #b3b3b3; font-size: 0.95rem; line-height: 1.6; max-width: 360px; margin: 0;">
+        Your trusted store for premium skincare, cosmetic essentials, and personal care items designed to highlight your natural confidence.
+      </p>
+    </div>
+
+    <!-- Quick Links Column -->
+    <div style="flex: 1; min-width: 180px;">
+      <h4 style="font-size: 1.1rem; color: #ffffff; margin-bottom: 16px; font-weight: 600;">Quick Links</h4>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <li><a href="#home" style="color: #b3b3b3; text-decoration: none; font-size: 0.95rem;">Home</a></li>
+        <li><a href="#about" style="color: #b3b3b3; text-decoration: none; font-size: 0.95rem;">About Us</a></li>
+        <li><a href="#products" style="color: #b3b3b3; text-decoration: none; font-size: 0.95rem;">Our Products</a></li>
+        <li><a href="#contact" style="color: #b3b3b3; text-decoration: none; font-size: 0.95rem;">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Column -->
+    <div style="flex: 1; min-width: 200px;">
+      <h4 style="font-size: 1.1rem; color: #ffffff; margin-bottom: 16px; font-weight: 600;">Contact</h4>
+      <p style="color: #b3b3b3; font-size: 0.95rem; margin-bottom: 8px;">
+        📞 <a href="https://wa.me/2348069111975" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">+234 806 911 1975</a>
+      </p>
+      <p style="color: #b3b3b3; font-size: 0.95rem; margin: 0;">
+        📍 Lagos, Nigeria
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Divider & Copyright -->
+  <hr style="border: none; border-top: 1px solid #333333; margin: 40px auto 20px; max-width: 1200px;">
+  <p style="color: #888888; font-size: 0.85rem; text-align: center; margin: 0;">
+    © 2026 Rahma Beauty Store. All rights reserved.
+  </p>
+</footer>
+<!-- ================= END FOOTER SECTION ================= -->
+
+</body>
+</html>
