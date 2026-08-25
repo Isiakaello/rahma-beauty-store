@@ -310,11 +310,17 @@ input:focus, textarea:focus {
 
 .rahma-hero-image-wrapper img {
   width: 100%;
-  height: 380px !important;
-  object-fit: cover !important;
+  height: auto !important;
+  object-fit: contain !important;
   border-radius: 12px;
   display: block;
 }
+  
+  
+  
+  
+  
+
   
   
   
@@ -363,6 +369,36 @@ input:focus, textarea:focus {
       margin-right: 0;
     }
   }
+   @media (max-width: 767px) {
+    .rahma-hero-container {
+      flex-direction: column !important;
+      text-align: center;
+      padding: 20px 15px;
+      gap: 20px;
+    }
+
+    .rahma-hero-title {
+      font-size: 1.8rem !important;
+      line-height: 1.3;
+    }
+
+    .rahma-hero-description {
+      font-size: 1rem !important;
+      max-width: 100% !important;
+    }
+
+    .rahma-hero-image-wrapper {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .rahma-hero-image-wrapper img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 300px;
+      object-fit: cover;
+    }
+   }
 </style>
 
 <section id="home" class="rahma-hero-section">
@@ -402,36 +438,29 @@ input:focus, textarea:focus {
   </p>
 </section>
 
-< id="products" style="padding: 70px 7%;">
-  <div style="display: flex; gap: 25px; flex-wrap: wrap;">
+<section id="products" style="padding: 70px 20px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
+    
     <!-- Card 1 -->
-    <div style="background: white; padding: 30px; width: 280px;">
+    <div style="background: white; padding: 20px; flex: 1; min-width: 250px; max-width: 320px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
       <h3>Quality Products</h3>
-      <p style="color: #666; margin-top: 10px;">
-        Curated beauty products selected for your everyday routine.
-      </p>
+      <p style="color: #666; margin-top: 10px;">Curated beauty products selected for your everyday needs.</p>
     </div>
 
     <!-- Card 2 -->
-    <div style="background: white; padding: 30px; width: 280px;">
+    <div style="background: white; padding: 20px; flex: 1; min-width: 250px; max-width: 320px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
       <h3>Personal Care</h3>
-      <p style="color: #666; margin-top: 10px;">
-        Personal-care essentials for a fresh and confident look.
-      </p>
+      <p style="color: #666; margin-top: 10px;">Personal-care essentials for a fresh and confident look.</p>
     </div>
 
     <!-- Card 3 -->
-    <div style="background: white; padding: 30px; width: 280px;">
+    <div style="background: white; padding: 20px; flex: 1; min-width: 250px; max-width: 320px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
       <h3>Gift Collection</h3>
-      <p style="color: #666; margin-top: 10px;">
-        Beautiful selections for special occasions and daily treats.
-      </p>
+      <p style="color: #666; margin-top: 10px;">Beautiful selections for special occasions and daily treats.</p>
     </div>
 
   </div>
-</>
-
-</>
+</section>
   <!-- Rahma Beauty Store - Products Section -->
 <style>
   /* Section Styles */
@@ -498,7 +527,7 @@ input:focus, textarea:focus {
   .rahma-image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.5s ease;
   }
 
